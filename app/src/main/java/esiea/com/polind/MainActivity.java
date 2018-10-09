@@ -15,5 +15,17 @@ public class MainActivity extends AppCompatActivity {
         EditText etPassword = findViewById(R.id.etPassword);
         EditText etEmail = findViewById(R.id.etEmail);
 
+        UserDatabase db = new UserDatabase(this);
+
+        User user = new User("test@test.fr","test");
+
+        db.open();
+        db.insertUser(user);
+
+        User userFromDb = db.getUserWithEmail(user.getEmail());
+
+        if(userFromDb != null){
+            etEmail.setText(userFromDb.getEmail());
+        }
     }
 }

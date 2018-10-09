@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 
 public class UserSQLite extends SQLiteOpenHelper {
 
-    private static final String TABLE_USER = "table_users";
+    private static final String TABLE_USER = "user";
     private static final String COL_ID = "ID";
     private static final String COL_EMAIL = "Email";
     private static final String COL_PASSWORD = "Password";
@@ -22,7 +22,6 @@ public class UserSQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BDD);
-
     }
 
     @Override
